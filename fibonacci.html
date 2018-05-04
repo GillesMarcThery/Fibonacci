@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <p>
+        Affiche la suite de Fibonacci...
+    </p>
+    <p id="resultat">
+        résultat
+    </p>
+    <script>
+        var limite = prompt('Entrez la limite :');
+        var tag_resultat = document.getElementById('resultat');
+        var suiteFibonacci = calculSuiteFibonaci(limite);
+        if (suiteFibonacci == -1) {
+            tag_resultat.innerHTML = limite + " n'est pas un entier";
+        }
+        else
+            tag_resultat.innerHTML = "Résultat du traitement -->" + suiteFibonacci;
+
+        function calculSuiteFibonaci(limite) {
+
+            var fibo_precedant = 0;
+            var fibo = 1;
+            var result = "0 1 ";
+            var somme = parseInt(fibo_precedant) + parseInt(fibo);
+
+            if (isNaN(limite)) {
+                return -1;
+            }
+
+            do {
+                result += somme.toString() + ' ';
+                fibo_precedant = fibo;
+                fibo = somme;
+                somme = parseInt(fibo_precedant) + parseInt(fibo);
+            }
+            while (parseInt(somme) <= parseInt(limite));
+
+            //alert('la suite est ' + result); // Affiche le prénom entré par l'utilisateur
+            return result;
+        }
+
+
+    </script>
+</body>
+
+</html>
