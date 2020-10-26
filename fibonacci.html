@@ -15,13 +15,13 @@
         résultat
     </p>
     <script>
+        // commentaire
         var limite = prompt('Entrez la limite :');
         var tag_resultat = document.getElementById('resultat');
         var suiteFibonacci = calculSuiteFibonaci(limite);
         if (suiteFibonacci == -1) {
             tag_resultat.innerHTML = limite + " n'est pas un entier";
-        }
-        else
+        } else
             tag_resultat.innerHTML = "Résultat du traitement -->" + suiteFibonacci;
 
         function calculSuiteFibonaci(limite) {
@@ -46,8 +46,6 @@
             //alert('la suite est ' + result); // Affiche le prénom entré par l'utilisateur
             return result;
         }
-
-
     </script>
 </body>
 
