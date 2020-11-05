@@ -11,21 +11,23 @@
     <p>
         Affiche la suite de Fibonacci...
     </p>
+    Entrez la limite :
+    <input type="text" id="limite" />
+    <button type="button" onclick="afficherSuiteFibonaci()">Calculer la suite</button>
     <p id="resultat">
         résultat
     </p>
     <script>
-        // commentaire 0
-        // commentaire 1
-        // commentaire 2
-        // commentaire 3
-        var limite = prompt('Entrez la limite :');
-        var tag_resultat = document.getElementById('resultat');
-        var suiteFibonacci = calculSuiteFibonaci(limite);
-        if (suiteFibonacci == -1) {
-            tag_resultat.innerHTML = limite + " n'est pas un entier";
-        } else
-            tag_resultat.innerHTML = "Résultat du traitement -->" + suiteFibonacci;
+        function afficherSuiteFibonaci() {
+
+            var limite = document.getElementById("limite").value;
+            var tag_resultat = document.getElementById('resultat');
+            var suiteFibonacci = calculSuiteFibonaci(limite);
+            if (suiteFibonacci == -1) {
+                tag_resultat.innerHTML = limite + " n'est pas un entier";
+            } else
+                tag_resultat.innerHTML = "Résultat du traitement -->" + suiteFibonacci;
+        }
 
         function calculSuiteFibonaci(limite) {
 
